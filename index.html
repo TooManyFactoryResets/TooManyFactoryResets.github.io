@@ -13,8 +13,9 @@
       term.onData(function (data) {
         if (data == "\n") {
           term.write("\nwebuser@localhost $ ");
+        } else {
+          term.write(data);
         }
-        term.write(data);
       });
     </script>
   </body>
