@@ -10,6 +10,9 @@
       var term = new Terminal();
       term.open(document.getElementById("terminal"));
       term.write("webuser@localhost $ ");
+      term.onData(function (data) {
+        term.write(data);
+      });
     </script>
   </body>
 </html>
