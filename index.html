@@ -11,8 +11,10 @@
       term.open(document.getElementById("terminal"));
       term.write("webuser@localhost $ ");
       term.onData(function (data) {
+        if (data == "") {
+          term.write("\nwebuser@localhost $ ");
+        }
         term.write(data);
-        window.alert(data);
       });
     </script>
   </body>
