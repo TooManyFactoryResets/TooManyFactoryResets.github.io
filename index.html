@@ -14,7 +14,6 @@
       term.onData(function (data) {
         if (data == "\r") {
           term.write("\r\nwebuser@localhost $ ");
-          window.alert("You typed: "+command);
           command = "";
         } else if (data == "\u007F") {
           if (term._core.buffer.x > 20) {
