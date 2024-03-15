@@ -23,6 +23,8 @@
       term.onData(function (data) {
         if (data == "\r") {
           if (command == "") {
+            term.write("\r\nwebuser@localhost $ ");
+            command = "";
             break;
           }
           try {
