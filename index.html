@@ -7,6 +7,11 @@
   <body>
     <div id="terminal" style="font-size: 1em; font-family: pixel-font;"></div>
     <script>
+      var cmds = {
+        "test" = function () {
+          window.alert("Test complete");
+        }
+      }
       var term = new Terminal();
       var command = "";
       term.open(document.getElementById("terminal"));
@@ -14,6 +19,7 @@
       term.onData(function (data) {
         if (data == "\r") {
           term.write("\r\nwebuser@localhost $ ");
+          cmds[command]();
           command = "";
         } else if (data == "\u007F") {
           if (term._core.buffer.x > 20) {
