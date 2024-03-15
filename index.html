@@ -22,12 +22,15 @@
       term.write("webuser@localhost $ ");
       term.onData(function (data) {
         if (data == "\r") {
+          if (command == "") {
+            break;
+          }
           try {
             commandArr = command.split(" ");
             cmds[commandArr[0]](commandArr.slice(1));
           } catch(ReferenceError) {
             try {
-              cmds[commandArr[0]]();
+              cmds[command]();
             } catch(ReferenceError) {
               term.write(`\r\nCommand '${commandArr[0]}' not found!`);
             }
