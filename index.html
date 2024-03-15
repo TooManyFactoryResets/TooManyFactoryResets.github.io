@@ -7,21 +7,26 @@
   <body>
     <div id="terminal"></div>
     <script>
-      var cmds = {
-        "test": function () {
-          window.alert("Test complete");
+      const cmds = {
+        "help": function() {
+          term.write(cmds.keys().join("\r\n"));
+        },
+        "echo": function(text) {
+          term.write(text.join(" "));
         }
       }
       var term = new Terminal();
       var command = "";
+      var commandArr = {};
       term.open(document.getElementById("terminal"));
       term.write("webuser@localhost $ ");
       term.onData(function (data) {
         if (data == "\r") {
           try {
-            cmds[command]();
+            commandArr = command.split(" ");
+            cmds[commandArr[0]](commandArr.slice(1));
           } catch(ReferenceError) {
-            term.write(`\r\nCommand '${command}' not found!`);
+            term.write(`\r\nCommand '${commandArr[0]}' not found!`);
           }
           term.write("\r\nwebuser@localhost $ ");
           command = "";
