@@ -18,8 +18,12 @@
       term.write("webuser@localhost $ ");
       term.onData(function (data) {
         if (data == "\r") {
+          try {
+            cmds[command]();
+          } catch(ReferenceError) {
+            term.write("\r\nCommand ${command} not found!");
+          }
           term.write("\r\nwebuser@localhost $ ");
-          cmds[command]();
           command = "";
         } else if (data == "\u007F") {
           if (term._core.buffer.x > 20) {
