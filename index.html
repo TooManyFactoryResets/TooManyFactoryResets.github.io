@@ -21,7 +21,7 @@
           try {
             cmds[command]();
           } catch(ReferenceError) {
-            term.write(`\r\nCommand ${command} not found!`);
+            term.write(`\r\nCommand '${command}' not found!`);
           }
           term.write("\r\nwebuser@localhost $ ");
           command = "";
