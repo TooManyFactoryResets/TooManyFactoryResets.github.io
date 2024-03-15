@@ -35,11 +35,6 @@
  *  Default styles for xterm.js
  */
 
-@font-face {
-    font-family: pixel-font;
-    src: url("./ARCADECLASSIC.TTF");
-}
-
 .xterm {
     cursor: text;
     position: relative;
