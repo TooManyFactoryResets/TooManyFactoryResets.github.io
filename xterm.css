@@ -37,7 +37,7 @@
 
 @font-face {
     font-family: pixel-font;
-    src: "./ARCADECLASSIC.TTF";
+    src: url("./ARCADECLASSIC.TTF");
 }
 
 .xterm {
