@@ -26,7 +26,11 @@
             commandArr = command.split(" ");
             cmds[commandArr[0]](commandArr.slice(1));
           } catch(ReferenceError) {
-            term.write(`\r\nCommand '${commandArr[0]}' not found!`);
+            try {
+              cmds[commandArr[0]]();
+            } catch(ReferenceError) {
+              term.write(`\r\nCommand '${commandArr[0]}' not found!`);
+            }
           }
           term.write("\r\nwebuser@localhost $ ");
           command = "";
