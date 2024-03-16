@@ -34,12 +34,6 @@
 /**
  *  Default styles for xterm.js
  */
-@font-face {
-    font-family: 'pixelFont';
-    src: url('./customFont.ttf');
-    letter-spacing: 1em;
-    font-size: 1em;
-}
 
 html, body {
 	background-color: #010;
