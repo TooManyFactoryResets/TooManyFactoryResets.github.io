@@ -20,7 +20,6 @@
       term.onData(function (data) {
         if (data == "\r") {
           if (command == "") {
-            break;
           } else {
             commandArr = command.split(" ");
             if (commandArr.length <= 1) {
