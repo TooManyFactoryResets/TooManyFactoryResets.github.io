@@ -34,6 +34,11 @@
 /**
  *  Default styles for xterm.js
  */
+@font-face {
+    font-family: 'pixelFont';
+    src: url('customFont.ttf');
+}
+
 html, body {
 	background-color: #010;
 }
