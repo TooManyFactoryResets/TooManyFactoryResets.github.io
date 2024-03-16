@@ -37,6 +37,7 @@
 @font-face {
     font-family: 'pixelFont';
     src: url('customFont.ttf');
+    letter-spacing: 1px;
 }
 
 html, body {
