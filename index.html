@@ -7,35 +7,31 @@
   <body>
     <div id="terminal"></div>
     <script>
-      const cmds = {
-        "help": function() {
-          term.write(cmds.keys().join("\r\n"));
-        },
+      var term = new Terminal();
+      term.open(document.getElementById("terminal"));
+      var command = "";
+      var commandArr = {};
+      var cmds = {
         "echo": function(text) {
           term.write(text.join(" "));
         }
       };
-      var term = new Terminal();
-      var command = "";
-      var commandArr = {};
-      term.open(document.getElementById("terminal"));
       term.write("webuser@localhost $ ");
       term.onData(function (data) {
         if (data == "\r") {
           if (command == "") {
-            term.write("\r\nwebuser@localhost $ ");
-            command = "";
             break;
-          }
-          try {
+          } else {
             commandArr = command.split(" ");
             if (commandArr.length <= 1) {
-              cmds[command]();
+              if (command in cmds) {
+                cmds[command]();
+              }
             } else {
-              cmds[commandArr[0]](commandArr.slice(1));
+              if (commandArr[0] in cmds) {
+                cmds[commandArr[0]](commandArr.slice(1));
+              }
             }
-          } catch(ReferenceError) {
-            term.write(`\r\nan error occured (stack trace WIP)`);
           }
           term.write("\r\nwebuser@localhost $ ");
           command = "";
