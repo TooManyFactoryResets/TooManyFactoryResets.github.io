@@ -35,6 +35,11 @@
  *  Default styles for xterm.js
  */
 
+@font-face {
+  font-family: "terminalFont";
+  src: url("FSEX302.ttf");
+}
+
 html, body {
 	background-color: #010;
 }
