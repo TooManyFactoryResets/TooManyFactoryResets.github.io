@@ -21,7 +21,7 @@
           term.write("\r\n"+text.join(" "));
         }
       };
-      term.write("webuser@localhost $ ");
+      term.write("$ ");
       term.onData(function (data) {
         if (data == "\r") {
           if (command == "") {
@@ -41,10 +41,10 @@
               }
             }
           }
-          term.write("\r\nwebuser@localhost $ ");
+          term.write("\r\n$ ");
           command = "";
         } else if (data == "\u007F") {
-          if (term._core.buffer.x > 20) {
+          if (term._core.buffer.x > 2) {
             term.write("\b \b");
             if (command.length > 0) {
               command = command.substr(0, command.length - 1);
