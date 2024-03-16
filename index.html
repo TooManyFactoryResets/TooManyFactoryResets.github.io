@@ -13,7 +13,7 @@
       var commandArr = {};
       var cmds = {
         "echo": function (text) {
-          term.write(text.join(" "));
+          term.write("\r\n"+text.join(" "));
         }
       };
       term.write("webuser@localhost $ ");
