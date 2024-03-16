@@ -29,13 +29,13 @@
               if (command in cmds) {
                 cmds[command]();
               } else {
-                term.write(`Command '${command}' not found!`);
+                term.write(`\r\nCommand '${command}' not found!`);
               }
             } else {
               if (commandArr[0] in cmds) {
                 cmds[commandArr[0]](commandArr.slice(1));
               } else {
-                term.write(`Command '${commandArr[0]}' not found!`);
+                term.write(`\r\nCommand '${commandArr[0]}' not found!`);
               }
             }
           }
