@@ -34,6 +34,9 @@
 /**
  *  Default styles for xterm.js
  */
+html, body {
+	background-color: #010;
+}
 
 .xterm {
     cursor: text;
@@ -79,7 +82,7 @@
 .xterm .composition-view {
     /* TODO: Composition position got messed up somewhere */
     background: #000;
-    color: #FFF;
+    color: #0F0;
     display: none;
     position: absolute;
     white-space: nowrap;
@@ -92,7 +95,7 @@
 
 .xterm .xterm-viewport {
     /* On OS X this is required in order for the scroll bar to appear fully opaque */
-    background-color: #000;
+    background-color: #010;
     overflow-y: scroll;
     cursor: default;
     position: absolute;
