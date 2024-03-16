@@ -21,7 +21,7 @@
           term.write("\r\n"+text.join(" "));
         }
       };
-      term.write("$ ");
+      term.write("> ");
       term.onData(function (data) {
         if (data == "\r") {
           if (command == "") {
@@ -41,7 +41,7 @@
               }
             }
           }
-          term.write("\r\n$ ");
+          term.write("\r\n> ");
           command = "";
         } else if (data == "\u007F") {
           if (term._core.buffer.x > 2) {
