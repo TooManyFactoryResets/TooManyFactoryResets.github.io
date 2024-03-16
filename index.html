@@ -12,6 +12,9 @@
       var command = "";
       var commandArr = {};
       var cmds = {
+        "help": function () {
+          term.write("\r\nWIP");
+        }
         "echo": function (text) {
           term.write("\r\n"+text.join(" "));
         }
