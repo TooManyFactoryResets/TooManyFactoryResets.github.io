@@ -7,7 +7,10 @@
   <body>
     <div id="terminal"></div>
     <script>
-      var term = new Terminal({ fontFamily: "terminalFont", fontSize: 1em });
+      var term = new Terminal({ 
+        fontFamily: "terminalFont",
+        fontSize: 16px
+      });
       term.open(document.getElementById("terminal"));
       var command = "";
       var commandArr = {};
