@@ -32,7 +32,7 @@
         if (data == "\r") {
           if (command == "") {
           } else {
-            commandArr = command.split(/,(?=(?:[^"]*"[^"]*")*$)/g);
+            commandArr = command.split(/\s(?=(?:[^"]*"[^"]*")*$)/g);
             if (commandArr.length <= 1) {
               if (command in cmds) {
                 cmds[command]();
