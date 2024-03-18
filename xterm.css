@@ -37,6 +37,7 @@
 
 @font-face {
   font-family: "terminalFont";
+  font-display: swap;
   src: url("FSEX302.ttf");
 }
 
