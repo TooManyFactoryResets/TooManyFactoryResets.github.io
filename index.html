@@ -21,6 +21,10 @@
         },
         "echo": function (text) {
           term.write("\r\n"+text.join(" "));
+        },
+        "eval": function (text) {
+          text = text.join("");
+          eval(text);
         }
       };
       term.write("> ");
