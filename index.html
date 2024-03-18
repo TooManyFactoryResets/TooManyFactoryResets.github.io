@@ -23,7 +23,7 @@
           term.write("\r\n"+text.join(" "));
         },
         "eval": function (text) {
-          text = text.join("");
+          text = text.join(" ");
           eval(text);
         }
       };
@@ -32,7 +32,7 @@
         if (data == "\r") {
           if (command == "") {
           } else {
-            commandArr = command.split(/ (?=(?:[^"]*"[^"]*")*$)/g);
+            commandArr = command.split(" ");
             if (commandArr.length <= 1) {
               if (command in cmds) {
                 cmds[command]();
