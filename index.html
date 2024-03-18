@@ -57,6 +57,12 @@
           command += data;
         }
       });
+      window.onError( function (event) {
+        term.write(event);
+        term.write("\r\n> ");
+        command = "";
+        return true;
+      });
     </script>
   </body>
 </html>
